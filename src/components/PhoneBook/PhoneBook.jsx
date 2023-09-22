@@ -58,7 +58,6 @@ export default function PhoneBook() {
           required
           value={name}
           onChange={handleChange}
-          placeholder="Name"
         />
         <MainText>Number</MainText>
         <Input
@@ -68,7 +67,6 @@ export default function PhoneBook() {
           required
           value={number}
           onChange={handleChange}
-          // placeholder="000-000-0000"
         />
         <Btn type="submit">Add contact</Btn>
       </Form>
