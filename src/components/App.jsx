@@ -1,16 +1,28 @@
-import { HeaderDiv, HeaderH1, HeaderH2 } from './AppNew.styled';
-import Filter from './ContactFilters/ContactFilters';
-import ContactFormPage from './ContactForm/ContactForm';
-import ContactListPage from './ContactList/ContactsList';
+import { lazy } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import Layout from './Layout/Layout';
+import PublicRoute from './PublicRoute';
+import PrivateRoute from './PrivateRoute';
+const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
+const LoginPage = lazy(() => import('../pages/LoginPage/LoginPage'));
+const RegisterPage = lazy(() => import('../pages/RegisterPage/RegisterPage'));
+const NotFoundPage = lazy(() => import('../pages/NotFoundPage/NotFoundPage'));
 
-export const App = () => {
+export function App() {
   return (
-    <HeaderDiv>
-      <HeaderH1>Phonebook</HeaderH1>
-      <ContactFormPage />
-      <HeaderH2>Contacts</HeaderH2>
-      <Filter />
-      <ContactListPage />
-    </HeaderDiv>
+    <Routes>
+      <Route element={<PublicRoute />}>
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+      </Route>
+
+      <Route element={<PrivateRoute redirectTo="/login" />}>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+        </Route>
+      </Route>
+
+      <Route path="*" element={<NotFoundPage />} />
+    </Routes>
   );
-};
+}
