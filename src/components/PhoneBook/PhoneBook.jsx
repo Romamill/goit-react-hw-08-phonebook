@@ -64,11 +64,11 @@ export default function PhoneBook() {
         <Input
           type="tel"
           name="number"
-          pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+          pattern="^[+]?[0-9\\.\\-\\s]{1,15}$"
           required
           value={number}
           onChange={handleChange}
-          placeholder="000-000-0000"
+          // placeholder="000-000-0000"
         />
         <Btn type="submit">Add contact</Btn>
       </Form>

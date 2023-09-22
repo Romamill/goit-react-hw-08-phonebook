@@ -23,7 +23,7 @@ const Input = styled.input`
 
   &:focus {
     border-color: #007bff; 
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a subtle box-shadow when focused */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
   }
 
   ::placeholder {
