@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 const Btn = styled.button`
-  background-color: #00aaff;
+  background-color: blue;
   color: #fff;
   font-size: 18px;
   padding: 12px 24px;
@@ -10,7 +10,7 @@ const Btn = styled.button`
   cursor: pointer;
   transition: background-color 0.3s ease;
   &:hover {
-    background-color: blue;
+    background-color: rgb(0, 68, 255);
   }
 `;
 
