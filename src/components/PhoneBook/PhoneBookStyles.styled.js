@@ -8,7 +8,7 @@ const Form = styled.form`
 
 const MainText = styled.h1`
   font-size: 42px;
-  color: #555;
+  color: black;
   margin-bottom: 24px;
 `;
 
