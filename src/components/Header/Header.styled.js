@@ -4,7 +4,7 @@ const MainHeader = styled.header`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  background-color: #333;
+  background-color: blue;
   color: #fff;
   padding: 36px;
   font-size: 24px;
